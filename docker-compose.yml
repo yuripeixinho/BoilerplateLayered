@@ -1,0 +1,28 @@
+services:
+  api:
+    build: 
+        context: .
+        dockerfile: Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__TFConnection=Server=tagmefive_db;Database=TagmeFive;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True
+    networks:
+      - minha_rede
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: tagmefive_db
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    networks:
+      - minha_rede
+
+networks:
+  minha_rede:
+    driver: bridge

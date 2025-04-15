@@ -23,6 +23,6 @@ public static class DatabaseConfig
         if (context == null)
             throw new InvalidOperationException("O contexto do banco de dados não pôde ser resolvido. Verifique a injeção de dependência.");
         
-        context.Database.Migrate();
+       context.Database.Migrate();
     }
 }

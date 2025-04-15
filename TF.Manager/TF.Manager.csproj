@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Interfaces\Services\" />
     <Folder Include="Middlewares\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Implementation\" />
     <Folder Include="Validator\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TF.Core.Shared\TF.Core.Shared.csproj" />
+    <ProjectReference Include="..\TF.Core\TF.Core.csproj" />
   </ItemGroup>
 
 </Project>
